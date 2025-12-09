@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "lib": ["DOM", "DOM.Iterable", "ES2021"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "types": ["jest", "node", "react", "react-dom"],
+    "paths": {
+      "@core/*": ["packages/core/*"],
+      "@data/*": ["packages/data/*"],
+      "@ui/*": ["packages/ui/*"],
+      "@wasm/*": ["packages/wasm/*"],
+      "@app/*": ["apps/web/*"]
+    }
+  }
+}

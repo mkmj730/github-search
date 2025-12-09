@@ -1,0 +1,12 @@
+{
+  "name": "@workspace/wasm",
+  "version": "1.0.0",
+  "main": "avatar_renderer/index.js",
+  "types": "avatar_renderer/index.d.ts",
+  "scripts": {
+    "build": "echo \"Compile wasm with wasm-pack or asc\""
+  },
+  "dependencies": {
+    "react": ">=18"
+  }
+}
