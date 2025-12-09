@@ -1,4 +1,7 @@
-﻿# GitHub REST Search Monorepo
+# GitHub REST Search Monorepo
+
+![홈 화면](docs/screenshots/home.png)
+![검색 SSR](docs/screenshots/search-ssr.png)
 
 과제는 pnpm + turborepo + Next.js 기반으로 구현되었으며,
 IDE는 과제 필수 요건이 아닙니다.
@@ -79,3 +82,10 @@ root/
 - 정렬: default/followers/repositories/joined, order desc 고정.
 - GitHub API는 서버 라우트에서 token 사용, 레이트리밋 재시도/백오프, mock 지원.
 - UI: MUI 컴포넌트 + Tailwind 레이아웃; Canvas+WASM 아바타; 반응형 SM/MD/LG/XL.
+ 
+## 스크린샷 (예시, `docs/screenshots` 폴더)
+- 홈 (구글 스타일 GitHub 검색 히어로): `docs/screenshots/home.png`
+- 검색 SSR 초기 결과: `docs/screenshots/search-ssr.png`
+- 필터/정렬/무한스크롤: `docs/screenshots/search-filters.png`
+- 다크 모드: `docs/screenshots/search-dark.png`
+- 레이트리밋 경고: `docs/screenshots/rate-limit.png`

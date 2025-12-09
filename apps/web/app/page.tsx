@@ -4,7 +4,7 @@ import HomeHero from "../components/HomeHero";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-neutral-950">
+    <main className="min-h-screen bg-white dark:bg-neutral-950 flex flex-col">
       <div className="flex items-center justify-between px-6 py-4 text-sm text-neutral-600 dark:text-neutral-300">
         <div className="flex gap-4">
           <span className="font-medium">GitHub Search</span>
@@ -20,7 +20,9 @@ export default function Home() {
         </div>
       </div>
 
-      <HomeHero />
+      <div className="flex-1 flex items-center justify-center">
+        <HomeHero />
+      </div>
     </main>
   );
 }
