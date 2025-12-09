@@ -30,6 +30,7 @@ describe("fetchWithRateLimit", () => {
   });
 
   it("backs off on secondary rate limit with retry-after", async () => {
+    jest.useFakeTimers();
     const now = Math.floor(Date.now() / 1000);
     const fetcher = jest
       .fn()
@@ -37,7 +38,7 @@ describe("fetchWithRateLimit", () => {
         new Response(JSON.stringify({ message: "You have exceeded a secondary rate limit." }), {
           status: 403,
           headers: new Headers({
-            "retry-after": "0",
+            "retry-after": "1",
             "x-ratelimit-remaining": "5"
           })
         })
@@ -52,8 +53,11 @@ describe("fetchWithRateLimit", () => {
         })
       );
 
-    const result = await fetchWithRateLimit(fetcher as any, "https://api.github.com");
+    const promise = fetchWithRateLimit(fetcher as any, "https://api.github.com");
+    await jest.runAllTimersAsync();
+    const result = await promise;
     expect(fetcher).toHaveBeenCalledTimes(2);
     expect(result.rateLimit.remaining).toBe(4);
+    jest.useRealTimers();
   });
 });

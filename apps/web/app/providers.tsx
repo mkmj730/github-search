@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable no-unused-vars */
 
 import React, { PropsWithChildren, useMemo, useState, useEffect, createContext, useContext } from "react";
 import { Provider as ReduxProvider } from "react-redux";
@@ -11,7 +12,6 @@ interface ThemeContextValue {
   setMode: (mode: ThemeMode) => void;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ThemeModeContext = createContext<ThemeContextValue>({
   mode: "system",
   setMode: () => {}
@@ -21,6 +21,7 @@ export const useThemeMode = () => useContext(ThemeModeContext);
 
 const Providers: React.FC<PropsWithChildren> = ({ children }) => {
   const store = useMemo(() => makeStore(), []);
+  // eslint-disable-next-line no-unused-vars
   const [mode, setMode] = useState<ThemeMode>("system");
   const [systemMode, setSystemMode] = useState<"light" | "dark">("light");
 

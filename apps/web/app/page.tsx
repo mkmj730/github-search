@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button, Avatar } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import HomeHero from "../components/HomeHero";
